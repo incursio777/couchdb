@@ -11,7 +11,7 @@ import './styles.css'
 
 function App(){
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/couchdb">
       <Routes>
         <Route path="/" element={<GamePage/>} />
         <Route path="/leaderboard" element={<LeaderboardPage/>} />
