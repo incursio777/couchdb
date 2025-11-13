@@ -1,0 +1,42 @@
+{
+  "name": "GameScore",
+  "type": "object",
+  "properties": {
+    "player_name": {
+      "type": "string",
+      "description": "Nombre del jugador"
+    },
+    "score": {
+      "type": "number",
+      "description": "Puntaje final"
+    },
+    "map": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "description": "Mapa jugado"
+    },
+    "rounds_completed": {
+      "type": "number",
+      "description": "Rondas completadas"
+    },
+    "enemies_destroyed": {
+      "type": "number",
+      "description": "Enemigos destruidos"
+    },
+    "quiz_correct": {
+      "type": "number",
+      "description": "Preguntas correctas"
+    },
+    "boss_defeated": {
+      "type": "boolean",
+      "description": "Jefe derrotado"
+    }
+  },
+  "required": [
+    "score"
+  ]
+}
