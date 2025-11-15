@@ -24,26 +24,6 @@ export default function GameBoard({
   // Definir caminos según el mapa
   const paths = {
     easy: [
-      { x: 0, y: 4 },
-      { x: 2, y: 4 },
-      { x: 2, y: 1 },
-      { x: 4, y: 1 },
-      { x: 4, y: 6 },
-      { x: 6, y: 6 },
-      { x: 6, y: 2 },
-      { x: 8, y: 2 },
-      { x: 8, y: 7 },
-      { x: 10, y: 7 },
-      { x: 10, y: 3 },
-      { x: 12, y: 3 },
-      { x: 12, y: 6 },
-      { x: 14, y: 6 },
-      { x: 14, y: 1 },
-      { x: 16, y: 1 },
-      { x: 16, y: 4 },
-      { x: 17, y: 4 }
-    ],
-    medium: [
       { x: 0, y: 5 },
       { x: 5, y: 5 },
       { x: 5, y: 2 },
@@ -59,22 +39,41 @@ export default function GameBoard({
       { x: 10, y: 5 },
       { x: 17, y: 5 }
     ],
-    hard: [
-      // Primera entrada: desde arriba al medio
-      { x: 8, y: 0 },
-      { x: 8, y: 2 },
-      { x: 8, y: 4 },
-      // Segunda entrada: desde la derecha al centro
-      { x: 17, y: 5 },
+    medium: [
+      { x: 0, y: 1 },
+      { x: 6, y: 1 },
+      { x: 8, y: 3 },
+      { x: 6, y: 5 },
+      { x: 2, y: 5 },
+      { x: 0, y: 7 },
+      { x: 2, y: 9 },
+      { x: 8, y: 9 },
+      { x: 9, y: 9 },
+      { x: 15, y: 9 },
+      { x: 17, y: 7 },
       { x: 15, y: 5 },
-      { x: 13, y: 5 },
       { x: 11, y: 5 },
-      { x: 9, y: 5 },
-      // Convergen en el medio
+      { x: 9, y: 3 },
+      { x: 11, y: 1 },
+      { x: 17, y: 1 }
+      
+    ],
+    hard: [
+      { x: 0, y: 0 },
+      { x: 0, y: 4 },
+      { x: 8, y: 4 },
+      { x: 9, y: 1 },
+      { x: 12, y: 0 },
+      { x: 13, y: 0 },
+      { x: 16, y: 1 },
+      { x: 17, y: 4 },
+      { x: 17, y: 5 },
+      { x: 16, y: 8 },
+      { x: 13, y: 9 },
+      { x: 12, y: 9 },
+      { x: 9, y: 8 },
       { x: 8, y: 5 },
-      { x: 8, y: 6 },
-      { x: 8, y: 8 },
-      // Terminal en esquina inferior izquierda
+      { x: 0, y: 5 },
       { x: 0, y: 9 }
     ]
   };
