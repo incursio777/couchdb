@@ -75,30 +75,34 @@ export default function TowerPanel({ towers = [], selectedTowerType = null, onTo
       <div className="panel">
         <h4 style={{margin:0, marginBottom:8}}>Información de Mejora</h4>
         <div style={{padding:10}}>
-          {/* Mostrar siempre los próximos niveles desbloqueables */}
-          {currentRound < 8 && (
-            <div className="small-text" style={{color:'#9aa0ad'}}>
-              ⭐ Mejora Nivel 2: Ronda 8<br/>
-              ⭐ Mejora Nivel 3: Ronda 15
+          <div className="small-text" style={{color:'#9aa0ad', marginBottom:8}}>
+            ⭐ Mejora Nivel 2: Ronda 8<br/>
+            ⭐ Mejora Nivel 3: Ronda 15<br/>
+            🔰 2da unidad: Ronda 5<br/>
+            🔰 3ra unidad: Ronda 10
+          </div>
+
+          {/* Mensajes grandes al desbloqueo (aparecen sólo en la ronda de desbloqueo) */}
+          {currentRound === 5 && (
+            <div style={{fontWeight:800, fontSize:'18px', color:'#34d399', background:'rgba(52,211,153,0.08)', padding:'12px', borderRadius:'8px', border:'2px solid #34d399'}}>
+              🎉 2da unidad desbloqueada!
             </div>
           )}
 
-          {currentRound >= 8 && currentRound < 15 && (
-            <div className="small-text" style={{color:'#9aa0ad'}}>
-              ⭐ Mejora Nivel 3: Ronda 15
+          {currentRound === 10 && (
+            <div style={{fontWeight:800, fontSize:'18px', color:'#34d399', background:'rgba(52,211,153,0.08)', padding:'12px', borderRadius:'8px', border:'2px solid #34d399'}}>
+              🎉 3ra unidad desbloqueada!
             </div>
           )}
 
-          {/* Notificación grande cuando se desbloquea nivel 2 */}
           {currentRound === 8 && (
-            <div style={{fontWeight:700, fontSize:'18px', color:'#fbbf24', background:'rgba(251, 191, 36, 0.1)', padding:'12px', borderRadius:'8px', border:'2px solid #fbbf24'}}>
+            <div style={{fontWeight:700, fontSize:'18px', color:'#fbbf24', background:'rgba(251, 191, 36, 0.1)', padding:'12px', borderRadius:'8px', border:'2px solid #fbbf24', marginTop:8}}>
               🎉 ¡Nivel 2 Desbloqueado!
             </div>
           )}
 
-          {/* Notificación grande cuando se desbloquea nivel 3 */}
           {currentRound === 15 && (
-            <div style={{fontWeight:700, fontSize:'18px', color:'#fbbf24', background:'rgba(251, 191, 36, 0.1)', padding:'12px', borderRadius:'8px', border:'2px solid #fbbf24'}}>
+            <div style={{fontWeight:700, fontSize:'18px', color:'#fbbf24', background:'rgba(251, 191, 36, 0.1)', padding:'12px', borderRadius:'8px', border:'2px solid #fbbf24', marginTop:8}}>
               🎉 ¡Nivel 3 Desbloqueado!
             </div>
           )}

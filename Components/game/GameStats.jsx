@@ -66,8 +66,8 @@ export default function GameStats({ lives, maxLives, round, score, enemiesDestro
         </Card>
       </div>
 
-      <div className="small-text" style={{display:'flex', gap:20, alignItems:'center'}}>
-        <div>Dificultad: <span className="lead">{difficulty === 'easy' ? '🌱 Fácil' : difficulty === 'medium' ? '⚔️ Media' : '💀 Difícil'}</span></div>
+      <div style={{display:'flex', gap:20, alignItems:'center'}}>
+        <div style={{fontSize:18, fontWeight:800, color:'#e6eef8'}}>Dificultad: <span style={{marginLeft:8}}>{difficulty === 'easy' ? '🌱 Fácil' : difficulty === 'medium' ? '⚔️ Media' : '💀 Difícil'}</span></div>
       </div>
     </div>
   );

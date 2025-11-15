@@ -31,6 +31,7 @@ export default function GamePage() {
   const [roundInProgress, setRoundInProgress] = useState(false);
   const [waitingForStart, setWaitingForStart] = useState(true);
   const [nextWaveComposition, setNextWaveComposition] = useState([]);
+  const [showRulesModal, setShowRulesModal] = useState(false);
 
   const maxLives = { easy: 100, medium: 75, hard: 50 };
   const mapMultiplier = { easy: 1, medium: 1.5, hard: 2 };
@@ -357,31 +358,71 @@ export default function GamePage() {
                 )}
               </div>
 
-              <motion.button
-                onClick={handleStartGame}
-                whileTap={{ scale: 0.95 }}
-                style={{
-                  backgroundColor: '#3b82f6',
-                  color: 'white',
-                  fontWeight: 700,
-                  fontSize: 18,
-                  borderRadius: 10,
-                  padding: '12px 28px',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 8,
-                  margin: '0 auto'
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.filter = 'brightness(0.85)')}
-                onMouseLeave={(e) => (e.currentTarget.style.filter = 'brightness(1)')}
-              >
-                ▶️ Iniciar Juego
-              </motion.button>
+              <div style={{display:'flex', gap:12, justifyContent:'center', alignItems:'center'}}>
+                <motion.button
+                  onClick={() => setShowRulesModal(true)}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    backgroundColor: '#0ea5e9',
+                    color: 'white',
+                    fontWeight:700,
+                    fontSize:16,
+                    borderRadius:10,
+                    padding:'10px 20px',
+                    cursor:'pointer',
+                    border: '2px solid rgba(0,0,0,0.08)'
+                  }}
+                >
+                  📜 Reglas
+                </motion.button>
+
+                <motion.button
+                  onClick={handleStartGame}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    backgroundColor: '#3b82f6',
+                    color: 'white',
+                    fontWeight: 700,
+                    fontSize: 18,
+                    borderRadius: 10,
+                    padding: '12px 28px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 8
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.filter = 'brightness(0.85)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.filter = 'brightness(1)')}
+                >
+                  ▶️ Iniciar Juego
+                </motion.button>
+              </div>
             </CardContent>
           </Card>
+
+          {/* Modal de Reglas */}
+          {showRulesModal && (
+            <div style={{position:'fixed', inset:0, background:'rgba(0,0,0,0.65)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:60}}>
+              <Card style={{maxWidth:720, width:'90%'}}>
+                <CardHeader>
+                  <CardTitle>Reglas del Juego</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div style={{display:'flex', flexDirection:'column', gap:12}}>
+                    <div>1. Coloca torres para defender la base. Las torres se desbloquean y se pueden mejorar en rondas específicas.</div>
+                    <div>2. 2da unidad por tipo: Ronda 5. 3ra unidad por tipo: Ronda 10.</div>
+                    <div>3. Mejora de torres: Nivel 2 en Ronda 8, Nivel 3 en Ronda 15.</div>
+                    <div>4. Completa rondas para ganar puntaje y enfrentar al jefe final en la ronda 21.</div>
+                    <div style={{textAlign:'right'}}>
+                      <motion.button onClick={() => setShowRulesModal(false)} whileTap={{scale:0.98}} style={{background:'#3b82f6', color:'white', padding:'8px 14px', borderRadius:8, fontWeight:700}}>Cerrar</motion.button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
         </div>
       </div>
     );
