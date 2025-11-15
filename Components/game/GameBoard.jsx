@@ -60,16 +60,22 @@ export default function GameBoard({
       { x: 17, y: 5 }
     ],
     hard: [
+      // Primera entrada: desde arriba al medio
       { x: 8, y: 0 },
       { x: 8, y: 2 },
-      { x: 6, y: 2 },
-      { x: 6, y: 4 },
       { x: 8, y: 4 },
+      // Segunda entrada: desde la derecha al centro
+      { x: 17, y: 5 },
+      { x: 15, y: 5 },
+      { x: 13, y: 5 },
+      { x: 11, y: 5 },
+      { x: 9, y: 5 },
+      // Convergen en el medio
+      { x: 8, y: 5 },
       { x: 8, y: 6 },
-      { x: 6, y: 6 },
-      { x: 6, y: 8 },
       { x: 8, y: 8 },
-      { x: 8, y: 9 }
+      // Terminal en esquina inferior izquierda
+      { x: 0, y: 9 }
     ]
   };
 
