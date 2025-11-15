@@ -46,15 +46,31 @@ export default function TowerPanel({ towers = [], selectedTowerType = null, onTo
       <div className="panel">
         <h4 style={{margin:0, marginBottom:8}}>Información de Mejora</h4>
         <div style={{padding:10}}>
-          {currentRound >= 8 && (
-            <div style={{fontWeight:700, fontSize:'16px', color:'#fbbf24', marginBottom: currentRound >= 15 ? 8 : 0}}>
-              ⭐ Las torres pueden ser de nivel 2
+          {/* Mostrar siempre los próximos niveles desbloqueables */}
+          {currentRound < 8 && (
+            <div className="small-text" style={{color:'#9aa0ad'}}>
+              ⭐ Mejora Nivel 2: Ronda 8<br/>
+              ⭐ Mejora Nivel 3: Ronda 15
             </div>
           )}
 
-          {currentRound >= 15 && (
-            <div style={{fontWeight:700, fontSize:'16px', color:'#fbbf24'}}>
-              ⭐ Las torres pueden ser de nivel 3
+          {currentRound >= 8 && currentRound < 15 && (
+            <div className="small-text" style={{color:'#9aa0ad'}}>
+              ⭐ Mejora Nivel 3: Ronda 15
+            </div>
+          )}
+
+          {/* Notificación grande cuando se desbloquea nivel 2 */}
+          {currentRound === 8 && (
+            <div style={{fontWeight:700, fontSize:'18px', color:'#fbbf24', background:'rgba(251, 191, 36, 0.1)', padding:'12px', borderRadius:'8px', border:'2px solid #fbbf24'}}>
+              🎉 ¡Nivel 2 Desbloqueado!
+            </div>
+          )}
+
+          {/* Notificación grande cuando se desbloquea nivel 3 */}
+          {currentRound === 15 && (
+            <div style={{fontWeight:700, fontSize:'18px', color:'#fbbf24', background:'rgba(251, 191, 36, 0.1)', padding:'12px', borderRadius:'8px', border:'2px solid #fbbf24'}}>
+              🎉 ¡Nivel 3 Desbloqueado!
             </div>
           )}
         </div>
