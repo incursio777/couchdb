@@ -46,15 +46,15 @@ export default function TowerPanel({ towers = [], selectedTowerType = null, onTo
       <div className="panel">
         <h4 style={{margin:0, marginBottom:8}}>Información de Mejora</h4>
         <div style={{padding:10}}>
-          {currentRound === 8 && (
-            <div className="small-text" style={{fontWeight:700}}>
-              las torres ahora pueden ser de nivel 2
+          {currentRound >= 8 && (
+            <div style={{fontWeight:700, fontSize:'16px', color:'#fbbf24', marginBottom: currentRound >= 15 ? 8 : 0}}>
+              ⭐ Las torres pueden ser de nivel 2
             </div>
           )}
 
-          {currentRound === 15 && (
-            <div className="small-text" style={{fontWeight:700}}>
-              las torres ahora pueden ser de nivel 3
+          {currentRound >= 15 && (
+            <div style={{fontWeight:700, fontSize:'16px', color:'#fbbf24'}}>
+              ⭐ Las torres pueden ser de nivel 3
             </div>
           )}
         </div>

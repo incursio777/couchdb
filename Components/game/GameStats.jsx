@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Heart, Trophy, Target, Shield } from 'lucide-react';
 
-export default function GameStats({ lives, maxLives, round, score, enemiesDestroyed }) {
+export default function GameStats({ lives, maxLives, round, score, enemiesDestroyed, difficulty = 'easy' }) {
   const livesPercent = (lives / maxLives) * 100;
 
   return (
@@ -67,8 +67,7 @@ export default function GameStats({ lives, maxLives, round, score, enemiesDestro
       </div>
 
       <div className="small-text" style={{display:'flex', gap:20, alignItems:'center'}}>
-        <div>Modo: <span className="lead">{/* placeholder */}Cluster</span></div>
-        <div>Torres max: <span className="lead">3</span></div>
+        <div>Dificultad: <span className="lead">{difficulty === 'easy' ? '🌱 Fácil' : difficulty === 'medium' ? '⚔️ Media' : '💀 Difícil'}</span></div>
       </div>
     </div>
   );

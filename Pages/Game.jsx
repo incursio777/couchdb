@@ -408,6 +408,7 @@ export default function GamePage() {
             round={round}
             score={Math.floor(score * mapMultiplier[selectedMap])}
             enemiesDestroyed={enemiesDestroyed}
+            difficulty={selectedMap}
           />
 
           {waitingForStart && !roundInProgress && (
